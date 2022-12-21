@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+   <head></head>
+   <body>
+       <form style="margin: 10% 36% 0% 25%;
+       padding: 0 60px 24px 86px;
+       border: 1px solid white; box-shadow: 10px 5px 5px 10px whitesmoke;" [formGroup]="adminloginform" (ngSubmit)="adminlogin()">
+            <h4 style="margin: 5px 0px 10px 60px;
+            padding: 15px 0 4px 60px;font-family:'Times New Roman', Times, serif">Admin</h4>
+           <label style="margin-bottom :7px; font-family: 'Times New Roman', Times, serif;">Email</label><br>
+           <input style="width: 85%;
+           padding: 4px;
+           font-size: 15px; font-family: 'Times New Roman', Times, serif;border-radius: 3px; border-color: grey;border-radius: 5px;   border: 1px solid darkgrey;"  type="email"  placeholder="Enter your email" required name="email" formControlName="email"><br><br>
+     
+       <div *ngIf="adminloginform.get('email')!.invalid &&  adminloginform.get('email')!.touched">
+         <small class="form-text text-danger" *ngIf="adminloginform.get('email')?.errors?.['required']"> email is required</small>
+      
+       </div>
+           <label style="margin-bottom :7px; font-family: 'Times New Roman', Times, serif;">Password</label><br>
+           <input style="width: 85%;
+           padding: 4px;
+           font-size: 15px; font-family: 'Times New Roman', Times, serif; border-radius: 5px;   border: 1px solid darkgrey;" 
+           type="password" placeholder="Enter your password" required name="password" formControlName="password"><br><br>
+       
+       <div *ngIf="adminloginform.get('password')!.invalid &&  adminloginform.get('password')!.touched">
+         <small class="form-text text-danger" *ngIf="adminloginform.get('password')?.errors?.['required']">password is required</small>
+         <small class="form-text text-danger" *ngIf="adminloginform.get('password')?.errors?.['minlength']">minimum 3 lettes
+
+         </small>
+       </div>
+       <button style="padding: 2px 15px 2px 10px;border-radius: 5px; color: white; background-color: blue; text-align: center;border: 1px solid black;font-family: 'Times New Roman', Times, serif;" 
+       type="submit">Login</button>
+       </form>
+   </body>
+</html>
+
