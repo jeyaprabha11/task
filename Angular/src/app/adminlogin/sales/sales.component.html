@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+              table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+        </style>
+    </head>
+        <body>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SalesOrderId  </th>
+                        <th>SalesOrderDetailId</th>
+                        <th>CarrierTrackingNumber</th>
+                        <th>OrderQty</th>
+                        <th>ProductId</th>
+                        <th>SpecialOfferId</th>
+                        <th>UnitPrice</th>
+                        <th>UnitPriceDiscount</th>
+                        <th>LineTotal</th>
+                        <th>Rowguid</th>
+                        <th>ModifiedDate</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor ="let s of SalesDetail">
+                        <td>{{s?.salesOrderId }}</td>
+                        <td>{{s?.salesOrderDetailId}}</td>
+                        <td>{{s?.carrierTrackingNumber}}</td>
+                        <td>{{s?.orderQty}}</td>
+                        <td>{{s?.productId}}</td>
+                        <td>{{s?.specialOfferId}}</td>
+                        <td>{{s?.unitPrice}}</td>
+                        <td>{{s?.unitPriceDiscount}}</td>
+                        <td>{{s?.lineTotal}}</td>
+                        <td>{{s?.rowguid}}</td>
+                        <td>{{s?.modifiedDate}}</td>
+                       
+                            
+                    </tr>
+                </tbody>
+            </table>
+        </body>
+   
+</html> 
